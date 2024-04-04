@@ -20,8 +20,8 @@ p{
     margin: 2%;
 }
 
-.divSecundario {
-    width: 30%; /* Cada carta ocupa el 30% del ancho */
+.divCarta {
+    width: 23%; /* Cada carta ocupa el 30% del ancho */
     margin: 1%; /* Margen entre los div */
     border: 3px solid #90972c; /* Borde opcional para visualizar los límites de los div */
     border-radius: 6px;
@@ -33,12 +33,12 @@ p{
     height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
 }
 @media (max-width: 600px) {
-    .divSecundario {
+    .divCarta {
         width: 45%; /* Cuando la pantalla tenga menos de 600px, cada carta ocupará el 45% del ancho */
     }
 }
 @media(max-width:250px){
-    .divSecundario{
+    .divCarta{
         width: 90%;
     }
 }
