@@ -1,9 +1,9 @@
 
-const moduloDom=require('./dom.js')
+//const moduloDom=require('./dom.js')
 const conectar=require('./conexxion.js');
-conectar();
-const axios = require('axios');
 
+const axios = require('axios');
+let productos=[];
 // Hacer una solicitud GET
 axios.get('https://fakestoreapi.com/products')
   .then(response => {
@@ -11,8 +11,8 @@ axios.get('https://fakestoreapi.com/products')
     productos=response.data;
     console.log('Respuesta exitosa:');
     console.log(response.data); // Datos de la respuesta
-    moduloDom.mostrar(response.data);
-    
+    //moduloDom.mostrar(response.data);
+    conectar(response.data);
   })
   .catch(error => {
     // Manejar el error

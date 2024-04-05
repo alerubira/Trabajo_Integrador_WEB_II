@@ -19,6 +19,7 @@
   "homepage": "https://github.com/alerubira/Trabajo_Integrador_WEB_II#readme",
   "dependencies": {
     "axios": "^1.6.8",
-    "express": "^4.18.3"
+    "express": "^4.18.3",
+    "pug": "^3.0.2"
   }
 }

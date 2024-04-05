@@ -1,0 +1,21 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon", href="./icono.png", type="image/x-icon")
+    link(rel="stylesheet", href="./estilo.css")
+    title Trabajo Integrador
+  body
+    #divPrincipal
+      #divCabecera
+        h1 Bienvenido a mi tienda Online
+        p Aquí encontrarás los mejores productos y ofertas
+      #divProductos
+        each producto in productos
+          .carta
+            h6= producto.id
+               // h6= producto.title 
+            h6= producto.price
+              // h6= producto.category
+            img(src=producto.image)
