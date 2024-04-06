@@ -13,9 +13,9 @@ html(lang="es")
         p Aquí encontrarás los mejores productos y ofertas
       #divProductos
         each producto in productos
-          .carta
+          .divCarta
             h6= producto.id
-               // h6= producto.title 
+            h6= producto.title 
             h6= producto.price
-              // h6= producto.category
+            h6= producto.category
             img(src=producto.image)

@@ -7,6 +7,7 @@ const pug = require('pug');
 // Función para conectar al servidor
 function conectar(productos) {
     const app = express();
+    //const productos=require('./index.js');
 
     // Configuración para servir archivos estáticos
     app.use(express.static(path.join(__dirname, 'public')));
