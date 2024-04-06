@@ -2,12 +2,13 @@
 const express = require('express');
 const path = require('path');
 const pug = require('pug');
+const app = express();
 
 
 // Función para conectar al servidor
 function conectar(productos) {
-    const app = express();
-    //const productos=require('./index.js');
+    
+   // const productos=require('./index.js');
 
     // Configuración para servir archivos estáticos
     app.use(express.static(path.join(__dirname, 'public')));
@@ -18,8 +19,8 @@ function conectar(productos) {
     });*/
     app.get('/', (req, res) => {
         // Compilar el archivo Pug a HTML
-        const html = pug.renderFile(path.join(__dirname, 'public', 'vistaP.pug'),productos);
-    
+        const html = pug.renderFile(path.join(__dirname, 'public', 'vistaP.pug'),{productos:productos});
+        
         // Enviar el HTML compilado como respuesta
         res.send(html);
     });

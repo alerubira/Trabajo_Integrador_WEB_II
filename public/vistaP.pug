@@ -14,8 +14,8 @@ html(lang="es")
       #divProductos
         each producto in productos
           .divCarta
-            h6= producto.id
-            h6= producto.title 
-            h6= producto.price
-            h6= producto.category
-            img(src=producto.image)
+            h6=`Titulo: ${producto.titulo}`  
+            h6=`Categoria: ${producto.categoria}`  
+            h6=`Precio: ${producto.precio}`  
+            h6=` Descripcion: ${producto.descripcion}` 
+            img(src=producto.imagen)
