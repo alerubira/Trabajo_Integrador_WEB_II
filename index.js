@@ -3,8 +3,10 @@
 const conectar=require('./conexxion.js');
 const traductor=require('node-google-translate-skidz');
 const axios = require('axios');
+const peticionOfertas=require('./peticionOfertas.js')
 let productos=[];
-
+//peticionOfertas;
+console.log(peticionOfertas());
 
   function traducir(texto){
     let traducido;
@@ -22,49 +24,21 @@ let productos=[];
     return traducido;
   }
    
-
-/*function traducir(texto) {
-  return new Promise((resolve, reject) => {
-    traductor({
-      text: texto,
-      source: 'en',
-      target: 'es'
-    }, function(result) {
-      const traducido = result.translation;
-      console.log(traducido);
-      resolve(traducido);
-    });
-  });
-}
-
-// Para utilizar la función traducir:
-async function miFuncion(texto) {
-  const textoTraducido = await traducir(texto); // 'Hello' es el texto que quieres traducir
-  console.log(textoTraducido); // Aquí puedes hacer lo que quieras con el texto traducido
-}*/
-
-//miFuncion("love"); // Llamamos a la función async para ejecutarla
-
-
-
-  
-
-
 // Hacer una solicitud GET
 axios.get('https://fakestoreapi.com/products')
   .then(response => {
     // Manejar la respuesta exitosa
    
     response.data.forEach((element) => {
-      //traducir(element.title);
+      
       //imagen del producto, título, descripción (máximo 30 caracteres), categoría y precio. 
       let producto={};
         producto.id=element.id;
         producto.imagen=element.image;
-        producto.titulo=traducir( element.title);
-       // producto.categoria=traducir(element.category);
+        producto.titulo= element.title;
+        producto.categoria=element.category;
         producto.precio=element.price;
-        //producto.descripcion=traducir(element.description);
+        producto.descripcion=element.description;
         productos.push(producto);
       
       

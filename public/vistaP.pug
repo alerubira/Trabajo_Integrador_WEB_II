@@ -16,6 +16,8 @@ html(lang="es")
           .divCarta
             h6=`Titulo: ${producto.titulo}`  
             h6=`Categoria: ${producto.categoria}`  
-            h6=`Precio: ${producto.precio}`  
-            h6=` Descripcion: ${producto.descripcion}` 
-            img(src=producto.imagen)
+            h6=`Precio: ${producto.precio}` 
+            h6=`Descripcion:` 
+            h6(class='hidden-description') D: #{producto.descripcion}
+            .divFoto
+              img(src=producto.imagen)

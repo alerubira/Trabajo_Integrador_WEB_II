@@ -6,6 +6,7 @@ body{
     background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around; /* Centra las grillas */
 }
 h1{
     font-family: cursive;
@@ -19,19 +20,27 @@ p{
     width: 100%;
     margin: 2%;
 }
+#divProductos {
+    display: flex; /* Para que los elementos dentro de divProductos se muestren en una fila */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente fila cuando no haya suficiente espacio */
+    justify-content: space-around; /* Espacio alrededor de los elementos, centrando la fila */
+  }
 
 .divCarta {
-    width: 23%; /* Cada carta ocupa el 30% del ancho */
+    /*width: calc(25% - 20px); /* Cada carta ocupa el 25% del ancho (para acomodar 4 en una fila) */
+    width: 22%; /* Cada carta ocupa el 30% del ancho */
     margin: 1%; /* Margen entre los div */
     border: 3px solid #90972c; /* Borde opcional para visualizar los límites de los div */
     border-radius: 6px;
     box-sizing: border-box; /* Asegura que el tamaño total incluya el borde */
     overflow: hidden; /* Oculta cualquier contenido que exceda el tamaño del div */
 }
-.imagen {
-    max-width: 100%; /* La imagen no puede exceder el ancho del contenedor */
+
+.divFoto img {
+    width: 100%; /* La imagen ocupa todo el ancho del divFoto */
     height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
-}
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+  }
 @media (max-width: 600px) {
     .divCarta {
         width: 45%; /* Cuando la pantalla tenga menos de 600px, cada carta ocupará el 45% del ancho */
@@ -41,4 +50,10 @@ p{
     .divCarta{
         width: 90%;
     }
+}
+.hidden-description {
+    display: none;
+  }
+h6:hover + .hidden-description {
+    display: block;
 }
