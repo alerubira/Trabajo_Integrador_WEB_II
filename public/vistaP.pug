@@ -7,10 +7,28 @@ html(lang="es")
     link(rel="stylesheet", href="./estilo.css")
     title Trabajo Integrador
   body
+    script. 
+       let carrito=[];
+    script.
+      function agregarAlCarrito(producto) {
+        if (producto == null || producto == undefined) {
+            // Aquí maneja el caso cuando no se pasa ningún producto
+            console.log("No se pasó ningún producto al carrito.");
+        } else {
+            // Agrega el producto a la variable global carrito
+            carrito.push(producto);
+            console.log("Producto agregado al carrito:", producto);
+            console.log("Contenido del carrito:", carrito);
+        }
+      }
+
+
+       
     #divPrincipal
       #divCabecera
         h1 Bienvenido a mi tienda Online
         p Aquí encontrarás los mejores productos y ofertas
+        button(type="button", onclick="agregarAlCarrito()") Acceder al carritio
       #divProductos
         each producto in productos
           .divCarta
@@ -22,9 +40,12 @@ html(lang="es")
                h6=`El dinero descontado es ${producto.dineroDescontado}`
                h6=`El precio final es ${producto.precioFinal}`
             .divFoto
-              img(src=producto.imagen)
+              img(src=producto.imagen, class="fotoProducto")
+
               if producto.descuento 
                img(src='./oferta.png', class='superpuesta')
+            button(type="button", onclick="agregarAlCarrito(null)") Agregar al carrito
+
             h6=producto.descripcion.slice(0,29)  
             h6.hidden-description=`${producto.descripcion.slice(29)}`
             

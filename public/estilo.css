@@ -38,9 +38,23 @@ p{
 
 .divFoto img {
     width: 100%; /* La imagen ocupa todo el ancho del divFoto */
-    height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
-    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+   height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+   object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
   }
+
+.divFoto {
+    width: 100%; /* 95% del ancho del contenedor */
+    position: relative; /* Importante para el posicionamiento absoluto de la imagen */
+}
+
+.fotoProducto {
+    width: 100%; /* 95% del ancho del contenedor */
+    height: auto; /* Esto asegura que el alto se ajuste proporcionalmente al ancho */
+    max-width: 100%; /* Para asegurarse de que la imagen no sea más ancha que su contenedor */
+    display: block; /* Para eliminar cualquier espacio adicional que pueda aparecer */
+}
+
+
 @media (max-width: 600px) {
     .divCarta {
         width: 45%; /* Cuando la pantalla tenga menos de 600px, cada carta ocupará el 45% del ancho */
@@ -66,7 +80,7 @@ h6:hover + .hidden-description {
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(0.5); /* Escala la imagen al 50% de su tamaño original */
+    transform: scale(0.3); /* Escala la imagen al 50% de su tamaño original */
     /* Ajusta el tamaño y otros estilos según sea necesario */
   }
     
