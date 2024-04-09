@@ -75,7 +75,10 @@ h6:hover + .hidden-description {
     display: block;
 }
 h6 {
-    margin: 2;
+    margin: 0;
+}
+h5{
+    margin: 0;
 }
 
   .divFoto {

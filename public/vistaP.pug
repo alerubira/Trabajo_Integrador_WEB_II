@@ -29,26 +29,29 @@ html(lang="es")
       #divProductos
         each producto in productos
           .divCarta
-            h6.codigo=Codigo #{producto.id}
-            h6.titulo=`Titulo: ${producto.titulo}`  
-            h6=`Categoria: ${producto.categoria}`  
+            h6 Codigo 
+            h5(class='codigo')= producto.id
+            h6 Titulo 
+            h5(class='titulo')=producto.titulo  
+            h6=`Categoria ${producto.categoria}`  
             h6=`Precio de Lista: ${producto.precio}` 
             if producto.descuento !==0
                h6=`Descuento del ${producto.descuento} porciento`
                h6=`El dinero descontado es ${producto.dineroDescontado}`
-               h6.precioFinal=El precio final es #{producto.precioFinal}
+               h6 El precio final es
+                h5(class='precioFinal')=producto.precioFinal
             else 
                h6=`Esate producto no tiene descuento`
                h6=`No se descontara ningun dinero`
-               h6.precioFinal=El precio final es #{producto.precioFinal}
+               h6 El precio final es
+                h5(class='precioFinal')=producto.precioFinal
             .divFoto
                  img(src=producto.imagen, class="fotoProducto")
              
                  if producto.descuento !==0
                     img(src='./oferta.png', class='superpuesta')
             button(type="button", onclick="agregarAlCarrito(this.parentNode)") Agregar al carrito
-
-            h6=producto.descripcion.slice(0,29)  
+            h6=`${producto.descripcion.slice(0,29)}`  
             h6.hidden-description=`${producto.descripcion.slice(29)}`
       .divInferior
          h1 Gracias por elegirnos 

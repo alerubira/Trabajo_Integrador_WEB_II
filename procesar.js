@@ -5,8 +5,7 @@ let productos=[];
 function procesarProductos(listaP){
   
     listaP.forEach((element) => {
-      let ofertaEncontrada = arregloConOfertas.find(oferta => oferta.id === element.id);
-        //el precio origina, el descuento, el monto descontado y el precio final.  
+      let ofertaEncontrada = arregloConOfertas.find(oferta => oferta.id === element.id); 
         let producto={};
         if(ofertaEncontrada){
           producto.precio=element.price;
@@ -20,7 +19,7 @@ function procesarProductos(listaP){
         }
           producto.id=element.id;
           producto.imagen=element.image;
-          producto.titulo= element.title;
+          producto.titulo=element.title
           producto.categoria=element.category;
           
           producto.descripcion=element.description;
@@ -39,15 +38,12 @@ function dineroDescontados(precio,descuento){
 
 return (precio*descuento)/100;
 }
-function traducir(texto){
-    let traducido;
-    traductor({
+async function traducir(texto){
+  
+  let traducido=await  traductor({
       text: texto,
       source: 'en',
       target: 'es'
-    }, function(result) {
-      traducido= result.translation;
-      return traducido;
-      });
-    
+      })
+    return traducido.translation;
   }
