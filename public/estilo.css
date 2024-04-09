@@ -14,6 +14,7 @@ h1{
 p{
     font-family: fantasy;
 }
+
 #divCabecera{
     text-align: center;
     background-color: rgb(255, 0, 21);
@@ -45,6 +46,8 @@ p{
 .divFoto {
     width: 100%; /* 95% del ancho del contenedor */
     position: relative; /* Importante para el posicionamiento absoluto de la imagen */
+    display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del contenido */
+
 }
 
 .fotoProducto {
@@ -70,6 +73,9 @@ p{
   }
 h6:hover + .hidden-description {
     display: block;
+}
+h6 {
+    margin: 2;
 }
 
   .divFoto {

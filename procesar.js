@@ -15,6 +15,8 @@ function procesarProductos(listaP){
           producto.precioFinal=producto.precio-producto.dineroDescontado;
         }else{
           producto.precio=element.price;
+          producto.precioFinal=producto.precio;
+          producto.descuento=0;
         }
           producto.id=element.id;
           producto.imagen=element.image;
