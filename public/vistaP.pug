@@ -16,8 +16,15 @@ html(lang="es")
           .divCarta
             h6=`Titulo: ${producto.titulo}`  
             h6=`Categoria: ${producto.categoria}`  
-            h6=`Precio: ${producto.precio}` 
-            h6=`Descripcion:` 
-            h6(class='hidden-description') D: #{producto.descripcion}
+            h6=`Precio de Lista: ${producto.precio}` 
+            if producto.descuento !== undefined
+               h6=`Descuento del ${producto.descuento} porciento`
+               h6=`El dinero descontado es ${producto.dineroDescontado}`
+               h6=`El precio final es ${producto.precioFinal}`
             .divFoto
               img(src=producto.imagen)
+              if producto.descuento 
+               img(src='./oferta.png', class='superpuesta')
+            h6=producto.descripcion.slice(0,29)  
+            h6.hidden-description=`${producto.descripcion.slice(29)}`
+            

@@ -57,3 +57,16 @@ p{
 h6:hover + .hidden-description {
     display: block;
 }
+
+  .divFoto {
+    position: relative; /* Esto permite que la imagen superpuesta esté posicionada dentro del contenedor */
+  }
+  
+  .superpuesta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0.5); /* Escala la imagen al 50% de su tamaño original */
+    /* Ajusta el tamaño y otros estilos según sea necesario */
+  }
+    
