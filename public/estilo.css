@@ -1,27 +1,31 @@
   
-body{
-    background-color: #19b13a;
-}
+
 #divPrincipal {
     background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; /* Centra las grillas */
+    margin: 0;
 }
 h1{
     font-family: cursive;
+    margin: 0;
 }
 p{
     font-family: fantasy;
+    margin: 0;
 }
 
 #divCabecera{
+    position: fixed;
     text-align: center;
-    background-color: rgb(255, 0, 21);
-    width: 100%;
-    margin: 2%;
+    background-color: rgb(73, 151, 165);
+    width: 95%;
+    margin: 0%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 #divProductos {
+    margin-top: 180px; /* Ajusta el valor según la altura de tu cabecera */
     display: flex; /* Para que los elementos dentro de divProductos se muestren en una fila */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente fila cuando no haya suficiente espacio */
     justify-content: space-around; /* Espacio alrededor de los elementos, centrando la fila */

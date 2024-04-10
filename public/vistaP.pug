@@ -13,14 +13,24 @@ html(lang="es")
       function agregarAlCarrito(divCarta) {
           let productoCarrito={};
           let numeroCodigo = parseInt(divCarta.querySelector('.codigo').innerText);
-          productoCarrito.codigo=numeroCodigo; 
-          productoCarrito.titulo =divCarta.querySelector('.titulo').innerText 
-          let numeroPrecio=divCarta.querySelector('.precioFinal').innerText
-          numeroPrecio = parseFloat(numeroPrecio);
-          productoCarrito.precioFinal=numeroPrecio;
-          carrito.push(productoCarrito);
-          console.log(carrito);
-      }
+          productoCarrito.codigo=numeroCodigo;
+          if(carrito.some(function(producto) {
+             return producto.codigo === productoCarrito.codigo}) ){
+              alert("El producto ya se encuentara en el carrito.En la pagina carrito podra seleccionar la cantidad");
+
+             }else{
+              productoCarrito.titulo =divCarta.querySelector('.titulo').innerText 
+              let numeroPrecio=divCarta.querySelector('.precioFinal').innerText
+              numeroPrecio = parseFloat(numeroPrecio);
+              productoCarrito.precioFinal=numeroPrecio;
+              productoCarrito.cantidad=1;
+              productoCarrito.precioSubtotal=numeroPrecio;
+              carrito.push(productoCarrito);
+              console.log(carrito);
+              }
+
+         
+         }
     script.  
       function irAlCarrito(carrito) {
           fetch('/carrito', {
@@ -46,13 +56,13 @@ html(lang="es")
             });
             }
 
-
-       
+    
     #divPrincipal
       #divCabecera
         h1 Bienvenido a mi tienda Online
         p Aquí encontrarás los mejores productos y ofertas
         button(type="button", onclick="irAlCarrito(carrito)") Acceder al carritio
+       
       #divProductos
         each producto in productos
           .divCarta
