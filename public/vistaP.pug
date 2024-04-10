@@ -12,11 +12,19 @@ html(lang="es")
     script.
       function agregarAlCarrito(divCarta) {
           let productoCarrito={};
-            productoCarrito.id = divCarta.querySelector('.codigo').innerText;
-            productoCarrito.titulo = divCarta.querySelector('.titulo').innerText;
-            productoCarrito.precioFinal=divCarta.querySelector('.precioFinal').innerText;
-            carrito.push(productoCarrito);
-            console.log(carrito);
+          let numeroCodigo = parseInt(divCarta.querySelector('.codigo').innerText);
+          productoCarrito.codigo=numeroCodigo; 
+          productoCarrito.titulo =divCarta.querySelector('.titulo').innerText 
+          let numeroPrecio=divCarta.querySelector('.precioFinal').innerText
+          numeroPrecio = parseFloat(numeroPrecio);
+          // Redondeando el número a dos dígitos después de la coma decimal
+          numeroPrecio = numeroPrecio.toFixed(2);
+          // Convirtiendo el número de nuevo a un número flotante
+          numeroPrecio = parseFloat(numeroPrecio);
+
+          productoCarrito.precioFinal=numeroPrecio;
+          carrito.push(productoCarrito);
+          console.log(carrito);
       }
     
 
