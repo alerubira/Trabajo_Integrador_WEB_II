@@ -17,23 +17,42 @@ html(lang="es")
           productoCarrito.titulo =divCarta.querySelector('.titulo').innerText 
           let numeroPrecio=divCarta.querySelector('.precioFinal').innerText
           numeroPrecio = parseFloat(numeroPrecio);
-          // Redondeando el número a dos dígitos después de la coma decimal
-          numeroPrecio = numeroPrecio.toFixed(2);
-          // Convirtiendo el número de nuevo a un número flotante
-          numeroPrecio = parseFloat(numeroPrecio);
-
           productoCarrito.precioFinal=numeroPrecio;
           carrito.push(productoCarrito);
           console.log(carrito);
       }
-    
+    script.  
+      function irAlCarrito(carrito) {
+          fetch('/carrito', {
+           method: 'POST',
+           headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ carrito: carrito })
+          })
+            .then(response => {
+      
+               if (response.ok) {
+            
+               window.location.href = '/carrito';
+            } else {
+        
+                console.error('Error al acceder al carrito:', response.status);
+              }
+            })
+             .catch(error => {
+      
+              console.error('Error de red:', error);
+            });
+            }
+
 
        
     #divPrincipal
       #divCabecera
         h1 Bienvenido a mi tienda Online
         p Aquí encontrarás los mejores productos y ofertas
-        button(type="button", onclick="agregarAlCarrito()") Acceder al carritio
+        button(type="button", onclick="irAlCarrito(carrito)") Acceder al carritio
       #divProductos
         each producto in productos
           .divCarta

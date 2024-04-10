@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const pug = require('pug');
 const app = express();
-
+// Middleware para procesar el cuerpo de la solicitud como JSON
+app.use(express.json());
 
 // Función para conectar al servidor
 function conectar(productos) {
@@ -24,6 +25,16 @@ function conectar(productos) {
         // Enviar el HTML compilado como respuesta
         res.send(html);
     });
+    app.post('/carrito', (req, res) => {
+        // Obtener el array de objetos JavaScript enviado desde el cliente
+         const carrito = req.body.carrito;
+
+        // Compilar el archivo Pug a HTML
+        
+        const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'), { carrito: carrito });
+        // Enviar el HTML compilado como respuesta
+        res.send(htmlC);
+    });
     
 
     // Manejo de errores
@@ -33,7 +44,8 @@ function conectar(productos) {
     });
 
     // Configuración del puerto
-    const PORT = process.env.PORT || 3000;
+    //const PORT = process.env.PORT || 3000;
+    const PORT = 3000;
     app.listen(PORT, () => {
         console.log(`Servidor en funcionamiento en el puerto ${PORT}`);
     });

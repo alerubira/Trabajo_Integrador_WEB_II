@@ -6,14 +6,18 @@ function procesarProductos(listaP){
   
     listaP.forEach((element) => {
       let ofertaEncontrada = arregloConOfertas.find(oferta => oferta.id === element.id); 
-        let producto={};
+      let producto={};
+      
+
+      producto.precio=element.price;
+
         if(ofertaEncontrada){
-          producto.precio=element.price;
+          //producto.precio=element.price;
           producto.descuento=ofertaEncontrada.porcentaje;
           producto.dineroDescontado=dineroDescontados(producto.precio,producto.descuento);
           producto.precioFinal=producto.precio-producto.dineroDescontado;
         }else{
-          producto.precio=element.price;
+         // producto.precio=element.price;
           producto.precioFinal=producto.precio;
           producto.descuento=0;
         }

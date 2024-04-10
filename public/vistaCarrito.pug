@@ -1,0 +1,19 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon", href="./icono.png", type="image/x-icon")
+    link(rel="stylesheet", href="./estilo.css")
+    title Trabajo Integrador
+  body
+    #divPrincipal
+      #divCabecera
+        h1 Bienvenido al carrito
+        p Aquí podras modificar tu pedido y hacer tu compra
+        
+      #divProductos
+       h1 Carrito de Compras
+       ul
+          each item in carrito
+            li= item.nombre + ' - ' + item.precio
