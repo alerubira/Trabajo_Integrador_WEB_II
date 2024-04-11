@@ -15,27 +15,27 @@ html(lang="es")
           { codigo : 12,titulo : 'Camisa',  precioFinal:55, cantidad:1,precioSubtotal:55 }
         ];
 
-       console.log(carrito);
+          console.log(carrito);
 
-    #divPrincipal
-      #divCabecera
-        h1 Bienvenido al carrito
-        p Aquí podras modificar tu pedido y hacer tu compra
+      #divPrincipal
+       #divCabecera
+         h1 Bienvenido al carrito
+         p Aquí podras modificar tu pedido y hacer tu compra
         
-      #divProductos
-       table
-        thead
-          tr
-            th Código
-            th Título
-            th Precio
-            th Cantidad
-            th Precio Subtotal
-        tbody
-          each producto in carrito
+       #divProductos
+        table
+         thead
            tr
-            td= producto.codigo
-            td= producto.titulo
-            td= producto.precio
-            td= producto.cantidad
-            td= producto.precioSubtotal
+             th Código
+             th Título
+             th Precio
+             th Cantidad
+             th Precio Subtotal
+         tbody
+           each producto in carrito
+            tr
+             td= producto.codigo
+             td= producto.titulo
+             td= producto.precio
+             td= producto.cantidad
+             td= producto.precioSubtotal
