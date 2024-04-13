@@ -7,13 +7,14 @@ html(lang="es")
     link(rel="stylesheet", href="./estilo.css")
     title Trabajo Integrador
   body
-      
+    script.
+          console.loog(carrito);
 
-      #divPrincipal
+    #divPrincipal
        #divCabecera
          h1 Bienvenido al carrito
          p Aquí podras modificar tu pedido y hacer tu compra
-         button(type="button", onclick="Comprar(carrito)") Comprar
+         button(type="button", onclick="Comprar(carritoFinal)") Comprar
        #divProductos
         table
           thead
@@ -23,12 +24,4 @@ html(lang="es")
              th Precio
              th Cantidad
              th Precio Subtotal
-          tbody
-             
-            each producto in carrito    
-             tr
-             td producto.codigo
-             td producto.titulo
-             td producto.precioFinal
-             td producto.cantidad
-             td producto.precioSubtotal
+          

@@ -9,7 +9,7 @@ html(lang="es")
   body 
        
     script.
-      let carrito=[];
+     let carrito=[];
       function agregarAlCarrito(divCarta) {
           let productoCarrito={};
           let numeroCodigo = parseInt(divCarta.querySelector('.codigo').innerText);
@@ -26,34 +26,41 @@ html(lang="es")
               productoCarrito.cantidad=1;
               productoCarrito.precioSubtotal=numeroPrecio;
               carrito.push(productoCarrito);
-              console.log(carrito);
+              //console.log(carrito);
               }
-
-         
-         }
+            }
+    script.
       function irAlCarrito(carrito) {
+        
+        if(carrito.length!==0){ 
+          
           fetch('/carrito', {
            method: 'POST',
            headers: {
             'Content-Type': 'application/json'
             },
+            
             body: JSON.stringify({ carrito: carrito })
-          })
+           })
             .then(response => {
       
                if (response.ok) {
             
                window.location.href = '/carrito';
-            } else {
+               } else {
         
                 console.error('Error al acceder al carrito:', response.status);
-              }
-            })
-             .catch(error => {
+               }
+             })
+            .catch(error => {
       
               console.error('Error de red:', error);
-            });
+             });
+             }else{
+              alert('Su carrito esta vacio, no se puede procesar su compra');
             }
+            }    
+      
       
       
 
