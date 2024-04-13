@@ -6,10 +6,10 @@ html(lang="es")
     link(rel="shortcut icon", href="./icono.png", type="image/x-icon")
     link(rel="stylesheet", href="./estilo.css")
     title Trabajo Integrador
-  body
-    script. 
-       let carrito=[];
+  body 
+       
     script.
+      let carrito=[];
       function agregarAlCarrito(divCarta) {
           let productoCarrito={};
           let numeroCodigo = parseInt(divCarta.querySelector('.codigo').innerText);
@@ -31,7 +31,6 @@ html(lang="es")
 
          
          }
-    script.  
       function irAlCarrito(carrito) {
           fetch('/carrito', {
            method: 'POST',
@@ -55,6 +54,8 @@ html(lang="es")
               console.error('Error de red:', error);
             });
             }
+      
+      
 
     
     #divPrincipal

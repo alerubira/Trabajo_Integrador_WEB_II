@@ -23,9 +23,17 @@ function procesarProductos(listaP){
         }
           producto.id=element.id;
           producto.imagen=element.image;
-          producto.titulo=element.title
-          producto.categoria=element.category;
-          
+          (async ()=>{
+            producto.titulo=await traducir(element.title);
+          })();
+          //producto.titulo=element.title
+          (async ()=>{
+            producto.categoria=await traducir(element.category);
+          })();
+         // producto.categoria=element.category;
+         (async ()=>{
+          producto.descripcion=await traducir(element.description);
+          })(); 
           producto.descripcion=element.description;
           productos.push(producto);
         

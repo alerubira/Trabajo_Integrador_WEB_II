@@ -7,35 +7,28 @@ html(lang="es")
     link(rel="stylesheet", href="./estilo.css")
     title Trabajo Integrador
   body
-      script.
-  
-        let carrito = [
-          { codigo : 4, titulo : 'Remera',  precioFinal:88, cantidad:1,precioSubtotal:88 },
-          { codigo : 7, titulo : 'Pantalon',precioFinal:34 ,cantidad:1,precioSubtotal:34},
-          { codigo : 12,titulo : 'Camisa',  precioFinal:55, cantidad:1,precioSubtotal:55 }
-        ];
-
-          console.log(carrito);
+      
 
       #divPrincipal
        #divCabecera
          h1 Bienvenido al carrito
          p Aquí podras modificar tu pedido y hacer tu compra
-        
+         button(type="button", onclick="Comprar(carrito)") Comprar
        #divProductos
         table
-         thead
-           tr
+          thead
+             tr
              th Código
              th Título
              th Precio
              th Cantidad
              th Precio Subtotal
-         tbody
-           each producto in carrito
-            tr
-             td= producto.codigo
-             td= producto.titulo
-             td= producto.precio
-             td= producto.cantidad
-             td= producto.precioSubtotal
+          tbody
+             
+            each producto in carrito    
+             tr
+             td producto.codigo
+             td producto.titulo
+             td producto.precioFinal
+             td producto.cantidad
+             td producto.precioSubtotal
