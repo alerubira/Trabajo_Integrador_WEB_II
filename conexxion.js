@@ -18,6 +18,19 @@ function conectar(productos) {
     /*app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'public', 'vista.html'));
     });*/
+     //pasar a post cuando venga el aaray de objetos,(carrito)
+     app.post ('/carrito', (req, res) => {
+    // Obtener el array de objetos JavaScript enviado desde el cliente
+     let carritox = req.body.carrito;
+    console.log(carritox);
+    // Compilar el archivo Pug a HTML
+    //, { carrito: carrito }
+    const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carritox});
+    // Enviar el HTML compilado como respuesta
+    res.send(htmlC);
+   //res.setHeader('Content-Type', 'text/html');
+  // res.status(200).send(htmlC);
+});
     app.get('/', (req, res) => {
         // Compilar el archivo Pug a HTML
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaP.pug'),{productos:productos});
@@ -25,17 +38,7 @@ function conectar(productos) {
         // Enviar el HTML compilado como respuesta
         res.send(html);
     });
-    //pasar a post cuando venga el aaray de objetos,(carrito)
-    app.post ('/carrito', (req, res) => {
-        // Obtener el array de objetos JavaScript enviado desde el cliente
-         let carritox = req.body.carrito;
-        console.log(carritox);
-        // Compilar el archivo Pug a HTML
-        //, { carrito: carrito }
-        const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carritox});
-        // Enviar el HTML compilado como respuesta
-        res.send(htmlC);
-    });
+    
     app.get('/carritos', (req, res) => {
         // Compilar el archivo Pug a HTML
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'));
