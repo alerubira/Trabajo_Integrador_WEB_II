@@ -16,7 +16,7 @@ html(lang="es")
        #divCabecera
          h1 Bienvenido al carrito
          p Aquí podras modificar tu pedido y hacer tu compra
-         button(type="button", onclick="Comprar(carritoFinal)") Comprar
+         button(type="button", onclick="comprar()") Comprar
        #divProductos
         table
           thead
@@ -29,26 +29,26 @@ html(lang="es")
              th Quitar 
              th Precio Subtotal
           tbody
-            tr
-              td 3
-              td pantalon 
+            tr.trProducto
+              td.tdCodigo 3
+              td.tdTitulo pantalon 
               td.tdPrecio 55
               td.tdCantidad 1
               td  
-                 button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +++
               td 
-                 button(type="button", onclick="agregar(this.parentNode.parentNode,false)") -
-              td.tdPrecioSubtotal 55
-            tr
-              td 6
-              td remera
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,false)") ---
+              td.tdPrecioSubTotal 55
+            tr.trProducto
+              td.tdCodigo 6
+              td.tdTitulo remera
               td.tdPrecio 45
               td.tdCantidad 1
               td  
                  button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +
               td 
                  button(type="button", onclick="agregar(this.parentNode.parentNode,false)") -
-              td.tdPrecioSubtotal 45
+              td.tdPrecioSubTotal 45
             tr
               td ------
               td ------

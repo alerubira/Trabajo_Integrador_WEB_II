@@ -22,7 +22,7 @@ function conectar(productos) {
      app.post ('/carrito', (req, res) => {
     // Obtener el array de objetos JavaScript enviado desde el cliente
      let carritox = req.body.carrito;
-    console.log(carritox);
+    //console.log(carritox);
     // Compilar el archivo Pug a HTML
     //, { carrito: carrito }
     const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carritox});
@@ -30,7 +30,7 @@ function conectar(productos) {
     res.send(htmlC);
    //res.setHeader('Content-Type', 'text/html');
   // res.status(200).send(htmlC);
-});
+   });
     app.get('/', (req, res) => {
         // Compilar el archivo Pug a HTML
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaP.pug'),{productos:productos});
