@@ -18,3 +18,12 @@ mostrar=function mostrarProductos(lista){
     }
 }
 module.exports=mostrar;
+/*tbody
+             
+each producto in carrito    
+tr
+td producto.codigo
+td producto.titulo
+td producto.precioFinal
+td producto.cantidad
+td producto.precioSubtotal*/

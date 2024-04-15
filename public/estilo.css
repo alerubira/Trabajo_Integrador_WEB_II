@@ -60,6 +60,15 @@ p{
     max-width: 100%; /* Para asegurarse de que la imagen no sea más ancha que su contenedor */
     display: block; /* Para eliminar cualquier espacio adicional que pueda aparecer */
 }
+table, th, td {
+    border: 2px solid black; /* Añade un borde de 2px sólido negro a la tabla, celdas de encabezado y celdas de datos */
+    border-collapse: collapse; /* Colapsa los bordes adyacentes en uno solo */
+  }
+  
+  th, td {
+    padding: 8px; /* Añade un espacio interno de 8px en las celdas */
+  }
+  
 
 
 @media (max-width: 600px) {

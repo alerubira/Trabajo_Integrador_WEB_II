@@ -6,19 +6,11 @@ html(lang="es")
     link(rel="shortcut icon", href="./icono.png", type="image/x-icon")
     link(rel="stylesheet", href="./estilo.css")
     title Trabajo Integrador
+    script(src="./domCarrito.js", defer)
   body
-    script.
-          function agregar(trProducto){
-               let cantidad = parseInt(trProducto.querySelector('.tdCantidad').innerText);
-               cantidad ++;
-               console.log(cantidad);
-               let precio= parseInt(trProducto.querySelector('.tdPrecio').innerText);
-               console.log(precio);
-               /*let precioSubtotall=precio*cantidad;
-               trProducto.querySelector('.tdCantidad').textContent=cantidad;
-               trProducto.querySelector('.tdPrecioSubtotal').textContent=precioSubtotall;*/
-
-          }
+    script. 
+       console.log(carrito);     
+         
 
     #divPrincipal
        #divCabecera
@@ -43,18 +35,28 @@ html(lang="es")
               td.tdPrecio 55
               td.tdCantidad 1
               td  
-                 button(type="button", onclick="agregar(this.parentNode)") +
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +
               td 
-                 button(type="button", onclick="quitar(this.parentNode)") -
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,false)") -
               td.tdPrecioSubtotal 55
+            tr
+              td 6
+              td remera
+              td.tdPrecio 45
+              td.tdCantidad 1
+              td  
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +
+              td 
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,false)") -
+              td.tdPrecioSubtotal 45
             tr
               td ------
               td ------
-              td ------
-              td#tdCantidaTotal 1 
+              td cantidad total
+              td#tdCantidadTotal 
               td -------
-              td -------
+              td Precio Final
               td#tdPrecioTotal 55
-          
+         
 
    

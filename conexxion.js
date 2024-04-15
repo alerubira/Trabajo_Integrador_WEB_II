@@ -28,11 +28,11 @@ function conectar(productos) {
     //pasar a post cuando venga el aaray de objetos,(carrito)
     app.post ('/carrito', (req, res) => {
         // Obtener el array de objetos JavaScript enviado desde el cliente
-         const carrito = req.body.carrito;
-        //console.log(carrito);
+         let carritox = req.body.carrito;
+        console.log(carritox);
         // Compilar el archivo Pug a HTML
         //, { carrito: carrito }
-        const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carrito});
+        const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carritox});
         // Enviar el HTML compilado como respuesta
         res.send(htmlC);
     });
