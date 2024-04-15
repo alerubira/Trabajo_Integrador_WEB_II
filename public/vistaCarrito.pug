@@ -8,7 +8,17 @@ html(lang="es")
     title Trabajo Integrador
   body
     script.
-          console.loog(carrito);
+          function agregar(trProducto){
+               let cantidad = parseInt(trProducto.querySelector('.tdCantidad').innerText);
+               cantidad ++;
+               console.log(cantidad);
+               let precio= parseInt(trProducto.querySelector('.tdPrecio').innerText);
+               console.log(precio);
+               /*let precioSubtotall=precio*cantidad;
+               trProducto.querySelector('.tdCantidad').textContent=cantidad;
+               trProducto.querySelector('.tdPrecioSubtotal').textContent=precioSubtotall;*/
+
+          }
 
     #divPrincipal
        #divCabecera
@@ -23,5 +33,28 @@ html(lang="es")
              th Título
              th Precio
              th Cantidad
+             th Agregar 
+             th Quitar 
              th Precio Subtotal
+          tbody
+            tr
+              td 3
+              td pantalon 
+              td.tdPrecio 55
+              td.tdCantidad 1
+              td  
+                 button(type="button", onclick="agregar(this.parentNode)") +
+              td 
+                 button(type="button", onclick="quitar(this.parentNode)") -
+              td.tdPrecioSubtotal 55
+            tr
+              td ------
+              td ------
+              td ------
+              td#tdCantidaTotal 1 
+              td -------
+              td -------
+              td#tdPrecioTotal 55
           
+
+   
