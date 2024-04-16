@@ -20,7 +20,7 @@ function compras(compra){
  let contenidoExistente = '';
  if (fs.existsSync('./compras.json')) {
      contenidoExistente = fs.readFileSync('./compras.json', 'utf8');
-     console.log(contenidoExistente);
+     //console.log(contenidoExistente);
  }
 
  // Verificar si el contenido existente está vacío o no es un JSON válido
