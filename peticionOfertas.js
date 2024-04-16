@@ -15,11 +15,47 @@ function activarPeticion(){
      
   });
 }
+function compras(compra){
+ // Leer el contenido actual del archivo 'compras.json' (si existe)
+ let contenidoExistente = '';
+ if (fs.existsSync('./compras.json')) {
+     contenidoExistente = fs.readFileSync('./compras.json', 'utf8');
+     console.log(contenidoExistente);
+ }
+
+ // Verificar si el contenido existente está vacío o no es un JSON válido
+ let arrayJSON = [];
+ if (contenidoExistente.trim() !== '') {
+     try {
+         arrayJSON = JSON.parse(contenidoExistente);
+     } catch (error) {
+         console.error('Error al analizar el contenido existente:', error);
+         res.status(500).send('Error interno del servidor');
+         return;
+     }
+ }
+
+ // Agregar el nuevo objeto JSON al array
+ arrayJSON.push(compra);
+
+ // Convertir el array actualizado a JSON
+ let nuevoContenido = JSON.stringify(arrayJSON);
+
+ // Escribir el nuevo contenido en el archivo 'compras.json'
+ fs.writeFileSync('./compras.json', nuevoContenido, 'utf8', (err) => {
+     if (err) {
+         console.error('Error al guardar en compras.json:', err);
+         res.status(500).send('Error interno del servidor');
+         return;
+     }
+     console.log('Datos de compra guardados correctamente en compras.json');
+ });
+}
 
 
 
   // Exportar el array de objetos para que esté disponible en otros módulos
-  module.exports = {activarPeticion,arregloConOfertas};
+  module.exports = {activarPeticion,arregloConOfertas,compras};
 
 
 

@@ -44,10 +44,9 @@ html(lang="es")
            })
             .then(response => {
       
-               if (response.ok) {
+               if (!response.ok) {
             
-               window.location.href = '/carrito';
-               } else {
+               
         
                 console.error('Error al acceder al carrito:', response.status);
                }

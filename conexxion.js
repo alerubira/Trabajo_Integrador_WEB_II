@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const pug = require('pug');
 const app = express();
+//const fs = require('fs');
+const compras= require('./peticionOfertas');
 // Middleware para procesar el cuerpo de la solicitud como JSON
 app.use(express.json());
 
@@ -31,6 +33,29 @@ function conectar(productos) {
    //res.setHeader('Content-Type', 'text/html');
   // res.status(200).send(htmlC);
    });
+
+   
+
+app.post('/compra', (req, res) => {
+    // Obtener el array de objetos JavaScript enviado desde el cliente
+    let compra = req.body.compra;
+
+    // Convertir la variable 'compra' a JSON
+    //let compraJSON = JSON.stringify(compra);
+     compras.compras(compra);
+   
+
+    // Compilar el archivo Pug a HTML
+    const htmlCom = pug.renderFile(path.join(__dirname, 'public', 'vistaCompra.pug'));
+
+    // Enviar el HTML compilado como respuesta
+    res.send(htmlCom);
+});
+
+   
+    
+
+   
     app.get('/', (req, res) => {
         // Compilar el archivo Pug a HTML
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaP.pug'),{productos:productos});
