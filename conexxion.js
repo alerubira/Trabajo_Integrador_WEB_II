@@ -26,12 +26,13 @@ function conectar(productos) {
      let carritox = req.body.carrito;
     //console.log(carritox);
     // Compilar el archivo Pug a HTML
-    //, { carrito: carrito }
+    //, { carrito: carritox }
     const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carritox});
+    console.log(htmlC)
     // Enviar el HTML compilado como respuesta
     res.send(htmlC);
-   //res.setHeader('Content-Type', 'text/html');
-  // res.status(200).send(htmlC);
+     // res.setHeader('Content-Type', 'text/html');
+     // res.status(200).send(htmlC);
    });
 
    
@@ -64,13 +65,13 @@ app.post('/compra', (req, res) => {
         res.send(html);
     });
     
-    app.get('/carritos', (req, res) => {
+   /* app.get('/carritos', (req, res) => {
         // Compilar el archivo Pug a HTML
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'));
         
         // Enviar el HTML compilado como respuesta
         res.send(html);
-    });
+    });*/
 
     // Manejo de errores
     app.use((err, req, res, next) => {
