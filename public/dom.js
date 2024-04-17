@@ -66,3 +66,50 @@ td producto.precioSubtotal*/
                     td producto.cantidad
                     td producto.precioSubtotal*/
                     //script(src="./domCarrito.js", defer)
+                  /*  function irAlCarrito(carrito) {
+                     if (carrito.length !== 0) { 
+                         // Codificar los datos como parámetros de consulta en la URL
+                         let queryString = `?carrito=${encodeURIComponent(JSON.stringify(carrito))}`;
+                         // Construir la URL completa con los parámetros de consulta
+                         let url = `http://localhost:3000/carrito${queryString}`;
+                 
+                         // Realizar la solicitud GET
+                         fetch(url)
+                             .then(response => {
+                                 if (!response.ok) {
+                                     console.error('Error al acceder al carrito:', response.status);
+                                 } else {
+                                     // Redirigir al usuario a la página de carrito después de que se complete la solicitud
+                                     window.location.href = 'http://localhost:3000/carrito';
+                                 }
+                             })
+                             .catch(error => {
+                                 console.error('Error de red:', error);
+                             });
+                     } else {
+                         alert('Su carrito está vacío, no se puede procesar su compra');
+                     }
+                 }*/
+   /*const express = require('express');
+const path = require('path');
+const app = express();
+
+// Establecer el motor de plantillas Pug
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+// Ruta para renderizar la vista de carrito
+app.get('/carrito', (req, res) => {
+    // Obtener el parámetro 'carrito' de la consulta (query) en la URL
+    const carrito = req.query.carrito;
+
+    // Renderizar la vista 'vistaCarrito.pug' y pasar el parámetro 'carrito'
+    res.render('vistaCarrito', { carrito: carrito });
+});
+
+// Iniciar el servidor
+app.listen(3000, () => {
+    console.log('Servidor Express en funcionamiento en el puerto 3000');
+});*/
+
+                                   
