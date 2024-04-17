@@ -27,3 +27,42 @@ td producto.titulo
 td producto.precioFinal
 td producto.cantidad
 td producto.precioSubtotal*/
+/*tbody
+            tr.trProducto
+              td.tdCodigo 3
+              td.tdTitulo pantalon 
+              td.tdPrecio 55
+              td.tdCantidad 1
+              td  
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +++
+              td 
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,false)") ---
+              td.tdPrecioSubTotal 55
+            tr.trProducto
+              td.tdCodigo 6
+              td.tdTitulo remera
+              td.tdPrecio 45
+              td.tdCantidad 1
+              td  
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,true)") +
+              td 
+                 button(type="button", onclick="agregar(this.parentNode.parentNode,false)") -
+              td.tdPrecioSubTotal 45*/
+              /*tr
+              td ------
+              td ------
+              td cantidad total
+              td#tdCantidadTotal 
+              td -------
+              td Precio Final
+              td#tdPrecioTotal */
+              /*tbody
+             
+                  each producto in carrito    
+                    tr
+                    td producto.codigo
+                    td producto.titulo
+                    td producto.precioFinal
+                    td producto.cantidad
+                    td producto.precioSubtotal*/
+                    //script(src="./domCarrito.js", defer)

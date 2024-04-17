@@ -5,8 +5,9 @@ html(lang="es")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="shortcut icon", href="./icono.png", type="image/x-icon")
     link(rel="stylesheet", href="./estilo.css")
-    title Trabajo Integrador
     script(src="./domCarrito.js", defer)
+    title Trabajo Integrador
+    
   body
     script. 
        console.log(carrito);     
@@ -28,23 +29,8 @@ html(lang="es")
              th Agregar 
              th Quitar 
              th Precio Subtotal
-          tbody
+          
              
-          each producto in carrito    
-              tr
-              td producto.codigo
-              td producto.titulo
-              td producto.precioFinal
-              td producto.cantidad
-              td producto.precioSubtotal
-              tr
-              td ------
-              td ------
-              td cantidad total
-              td#tdCantidadTotal 
-              td -------
-              td Precio Final
-              td#tdPrecioTotal 
          
 
    
