@@ -32,26 +32,12 @@ html(lang="es")
     script.
          function irAlCarrito(carrito) {
               if (carrito.length !== 0) { 
-                fetch('http://localhost:3000/carrito', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                   },
-                body: JSON.stringify({ carrito: carrito })
-                })
-                  .then(response => {
-                    if (!response.ok) {
-                   console.error('Error al acceder al carrito:', response.status);
-                 }/* else {
-                   // Redirigir al usuario a la página de carrito después de que se complete la solicitud
-                  
-                    window.location.replace('http://localhost:3000/carrito');
-                  }*/
-                      console.log(response);
-                     })
-                   .catch(error => {
-                   console.error('Error de red:', error);
-                 });
+               // Aquí puedes agregar cualquier lógica adicional antes de guardar el carrito en localStorage
+                  localStorage.setItem('carrito', JSON.stringify(carrito));
+                  // En este ejemplo, he usado JSON.stringify() para convertir el array 'carrito' en una cadena JSON antes de guardarlo en el localStorage
+                 // Esto te permite guardar objetos complejos como arrays en el localStorage
+                  // Después de guardar el carrito en localStorage, redirigir al usuario a la siguiente página
+                 window.location.href = '/carrito'; // Cambia '/siguiente_pagina' por la URL de la página a la que deseas redirigir
                    } else {
                           alert('Su carrito está vacío, no se puede procesar su compra');
                          }
