@@ -7,7 +7,8 @@ const app = express();
 const compras= require('./peticionOfertas');
 // Middleware para procesar el cuerpo de la solicitud como JSON
 app.use(express.json());
-app.set('view engine', 'pug');
+//app.set('view engine', 'pug');
+//app.set('views', path.join(__dirname, 'vistas'));
 // Función para conectar al servidor
 function conectar(productos) {
     
@@ -21,20 +22,21 @@ function conectar(productos) {
         res.sendFile(path.join(__dirname, 'public', 'vista.html'));
     });*/
      //pasar a post cuando venga el aaray de objetos,(carrito)
-    // app.post ('/carrito', (req, res) => {
+     app.post ('/carrito', (req, res) => {
     // Obtener el array de objetos JavaScript enviado desde el cliente
-    // let carrito = req.body.carrito;
-   // console.log(carrito);
+       let carrito = req.body.carrito;
+       console.log(carrito);
     // Compilar el archivo Pug a HTML
     //, { carrito: carritox }
-   // const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'), { carrito: carrito });
+        const htmlC = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'), { carrito: carrito });
     //console.log(htmlC)
     // Enviar el HTML compilado como respuesta
-   //res.send(htmlC);
-   //res.redirect('/carrito');
+      res.send(htmlC);
+     //res.redirect('/carrito');
+   
      // res.setHeader('Content-Type', 'text/html');
      // res.status(200).send(htmlC);
-  // });
+     });
 
    
 
@@ -54,7 +56,16 @@ app.post('/compra', (req, res) => {
     res.send(htmlCom);
 });
 
-   
+   /*  app.get('/carrito', (req, res) => {
+        const carrito = req.query.carrito;
+    // Aquí renderiza la vista de carrito o envía la página HTML del carrito
+    const htmlCom = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'),{carrito:carrito});
+
+    // Enviar el HTML compilado como respuesta
+    res.send(htmlCom);
+         
+       });*/
+
     
 
    
@@ -66,21 +77,14 @@ app.post('/compra', (req, res) => {
         res.send(html);
     });
     
-   /* app.get('/carritos', (req, res) => {
+     app.get('/carritos', (req, res) => {
         // Compilar el archivo Pug a HTML
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'));
         
         // Enviar el HTML compilado como respuesta
         res.send(html);
-    });*/
-    // Ruta para renderizar la vista de carrito
-     app.get('/carrito', (req, res) => {
-    // Obtener el parámetro 'carrito' de la consulta (query) en la URL
-    const carrito = req.query.carrito;
-
-    // Renderizar la vista 'vistaCarrito.pug' y pasar el parámetro 'carrito'
-    res.render('vistaCarrito', { carrito: carrito });
-       });
+    });
+    
 
 
     // Manejo de errores
