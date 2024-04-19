@@ -1,8 +1,82 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Obtener el carrito del localStorage
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  console.log(carrito);
+  // Obtener el elemento tbody de la tabla
+  let tbody = document.querySelector('#divPrincipal #divProductos table tbody');
+
+  // Limpiar el contenido existente del tbody
+  //tbody.innerHTML = '';
+
+  // Renderizar cada producto en el carrito
+  carrito.forEach(function(producto) {
+      let tr = document.createElement('tr');
+      tr.classList.add('trProducto');
+
+      // Crear las celdas para cada atributo del producto
+      let tdCodigo = document.createElement('td');
+      tdCodigo.classList.add('tdCodigo');
+      tdCodigo.textContent = producto.codigo;
+
+      let tdTitulo = document.createElement('td');
+      tdTitulo.classList.add('tdTitulo');
+      tdTitulo.textContent = producto.titulo;
+
+      let tdPrecio = document.createElement('td');
+      tdPrecio.classList.add('tdPrecio');
+      tdPrecio.textContent = producto.precio;
+
+      let tdCantidad = document.createElement('td');
+      tdCantidad.classList.add('tdCantidad');
+      tdCantidad.textContent = producto.cantidad;
+
+      let tdAgregar = document.createElement('td');
+      let btnAgregar = document.createElement('button');
+      btnAgregar.textContent = '+++';
+      btnAgregar.type = 'button';
+      btnAgregar.addEventListener('click', function() {
+          agregar(tr, true);
+      });
+      tdAgregar.appendChild(btnAgregar);
+
+      let tdQuitar = document.createElement('td');
+      let btnQuitar = document.createElement('button');
+      btnQuitar.textContent = '---';
+      btnQuitar.type = 'button';
+      btnQuitar.addEventListener('click', function() {
+          agregar(tr, false);
+      });
+      tdQuitar.appendChild(btnQuitar);
+
+      let tdPrecioSubTotal = document.createElement('td');
+      tdPrecioSubTotal.classList.add('tdPrecioSubTotal');
+      tdPrecioSubTotal.textContent = producto.precioSubtotal;
+
+      // Agregar las celdas a la fila
+      tr.appendChild(tdCodigo);
+      tr.appendChild(tdTitulo);
+      tr.appendChild(tdPrecio);
+      tr.appendChild(tdCantidad);
+      tr.appendChild(tdAgregar);
+      tr.appendChild(tdQuitar);
+      tr.appendChild(tdPrecioSubTotal);
+
+      // Agregar la fila al tbody
+      tbody.appendChild(tr);
+  });
+  incrementar();
+});
+
+function agregar(fila, esAgregar) {
+  // Función para agregar o quitar productos del carrito
+}
+
 function incrementar(){
     let cantidadProductos=document.getElementsByClassName('tdCantidad');
     let cantidadTotalProductos=document.getElementById('tdCantidadTotal');
     let precioSubTotales=document.getElementsByClassName('tdPrecioSubTotal');
     let precioTotal=document.getElementById('tdPrecioTotal');
+
     let total=0;
     for(cant of cantidadProductos){
           total +=parseInt(cant.textContent);
@@ -23,7 +97,7 @@ function incrementar(){
        trProducto.querySelector('.tdPrecioSubTotal').textContent=precioSubtotall;
        incrementar();
   }
-  incrementar();
+  //incrementar();
   function comprar(){
     let compra={};
     let productosCompra=[];

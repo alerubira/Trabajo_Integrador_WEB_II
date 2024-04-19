@@ -9,23 +9,7 @@ html(lang="es")
     title Trabajo Integrador
     
   body
-    script. 
-           let carrito=[];  
-           let carritoGuardado = localStorage.getItem('carrito');
-
-            
-           if (carritoGuardado !== null) {
-               carrito = JSON.parse(carritoGuardado); // Convertir la cadena JSON de nuevo a un array
-             // Ahora 'carrito' contiene los datos del carrito almacenados en localStorage
-             // Puedes usar 'carrito' como lo necesites en tu aplicación
-             console.log(carrito);
-              } else {
-                alert("carrito vacio");
-               // Si 'carritoGuardado' es null, significa que no hay ningún carrito almacenado en localStorage
-             // Puedes manejar esta situación de acuerdo a tus necesidades
-             }
-
-                   
+    
          
 
     #divPrincipal
@@ -44,8 +28,14 @@ html(lang="es")
              th Agregar 
              th Quitar 
              th Precio Subtotal
-          
-             
+             tr
+             td ------
+             td ------
+             td cantidad total
+             td#tdCantidadTotal 
+             td -------
+             td Precio Final
+             td#tdPrecioTotal
          
 
    

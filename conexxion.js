@@ -78,7 +78,7 @@ app.post('/compra', (req, res) => {
     });
     
      app.get('/carrito', (req, res) => {
-        // Compilar el archivo Pug a HTML
+       
         const html = pug.renderFile(path.join(__dirname, 'public', 'vistaCarrito.pug'));
         
         // Enviar el HTML compilado como respuesta
