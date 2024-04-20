@@ -49,7 +49,7 @@ function compras(compra){
  arrayJSON.push(compra);
 
  // Convertir el array actualizado a JSON
- let nuevoContenido = JSON.stringify(arrayJSON);
+ let nuevoContenido = JSON.stringify(arrayJSON,null,2);
 
  // Escribir el nuevo contenido en el archivo 'compras.json'
  fs.writeFileSync('./compras.json', nuevoContenido, 'utf8', (err) => {

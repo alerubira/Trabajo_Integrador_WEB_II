@@ -34,7 +34,7 @@ p{
 
 .divCarta {
     /*width: calc(25% - 20px); /* Cada carta ocupa el 25% del ancho (para acomodar 4 en una fila) */
-    width: 22%; /* Cada carta ocupa el 30% del ancho */
+    width: 22%; /* Cada carta ocupa el 22% del ancho */
     margin: 1%; /* Margen entre los div */
     border: 3px solid #90972c; /* Borde opcional para visualizar los límites de los div */
     border-radius: 6px;
@@ -42,24 +42,30 @@ p{
     overflow: hidden; /* Oculta cualquier contenido que exceda el tamaño del div */
 }
 
-.divFoto img {
+/*.divFoto img {
     width: 100%; /* La imagen ocupa todo el ancho del divFoto */
-   height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
-   object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
-  }
+  /* height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+  /* object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+  
 
 .divFoto {
     width: 100%; /* 95% del ancho del contenedor */
     position: relative; /* Importante para el posicionamiento absoluto de la imagen */
     display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del contenido */
+    /*width: 200px; /* Tamaño deseado para el ancho */
+   /* height: 200px; /* Tamaño deseado para la altura */
 
 }
 
 .fotoProducto {
     width: 100%; /* 95% del ancho del contenedor */
-    height: auto; /* Esto asegura que el alto se ajuste proporcionalmente al ancho */
+    /*height: auto; /* Esto asegura que el alto se ajuste proporcionalmente al ancho */
     max-width: 100%; /* Para asegurarse de que la imagen no sea más ancha que su contenedor */
     display: block; /* Para eliminar cualquier espacio adicional que pueda aparecer */
+   /* width: 200px; /* Tamaño deseado para el ancho */
+    height: 200px; /* Tamaño deseado para la altura */
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+   /* display: block; /* Para eliminar cualquier espacio adicional que pueda aparecer */
 }
 table, th, td {
     border: 2px solid black; /* Añade un borde de 2px sólido negro a la tabla, celdas de encabezado y celdas de datos */
@@ -83,10 +89,12 @@ table, th, td {
     }
 }
 .hidden-description {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
   }
 h6:hover + .hidden-description {
-    display: block;
+    /*display: block;*/
+    visibility: visible;
 }
 h6 {
     margin: 0;
@@ -95,15 +103,15 @@ h5{
     margin: 0;
 }
 
-  .divFoto {
+ /* .divFoto {
     position: relative; /* Esto permite que la imagen superpuesta esté posicionada dentro del contenedor */
-  }
+  
   
   .superpuesta {
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(0.3); /* Escala la imagen al 50% de su tamaño original */
+    transform: scale(0.5); /* Escala la imagen al 50% de su tamaño original */
     /* Ajusta el tamaño y otros estilos según sea necesario */
   }
     

@@ -138,10 +138,14 @@ function incrementar(){
     .then(response => {
         if (!response.ok) {
             console.error('Error al acceder a la Compra:', response.status);
+        }else{
+          alert("Su compra fue realizada con exito");
+          compra=[];
+          window.location.href = '/'; 
         }
     })
     
-  
+    
   
     .catch(error => {
         console.error('Error de red:', error);

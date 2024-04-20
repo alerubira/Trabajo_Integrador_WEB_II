@@ -54,7 +54,7 @@ app.post('/compra', (req, res) => {
 
     // Enviar el HTML compilado como respuesta
     //res.send(htmlCom);
-    //res.status(200).send('Compra guardada correctamente.');
+    res.status(200).send('Compra guardada correctamente.');
 });
 
    /*  app.get('/carrito', (req, res) => {
