@@ -21,11 +21,12 @@ p{
     text-align: center;
     background-color: rgb(73, 151, 165);
     width: 95%;
-    margin: 0%;
+    margin: 1%;
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 0 0 23px rgb(0, 132, 255); 
 }
 #divProductos {
-    margin-top: 180px; /* Ajusta el valor según la altura de tu cabecera */
+    margin-top: 150px; /* Ajusta el valor según la altura de tu cabecera */
     display: flex; /* Para que los elementos dentro de divProductos se muestren en una fila */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente fila cuando no haya suficiente espacio */
     justify-content: space-around; /* Espacio alrededor de los elementos, centrando la fila */

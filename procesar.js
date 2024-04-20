@@ -15,7 +15,7 @@ function procesarProductos(listaP){
           //producto.precio=element.price;
           producto.descuento=ofertaEncontrada.porcentaje;
           producto.dineroDescontado=dineroDescontados(producto.precio,producto.descuento);
-          producto.precioFinal=producto.precio-producto.dineroDescontado;
+          producto.precioFinal=(producto.precio-producto.dineroDescontado).toFixed(2);
         }else{
          // producto.precio=element.price;
           producto.precioFinal=producto.precio;

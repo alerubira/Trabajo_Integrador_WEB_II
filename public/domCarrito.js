@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let tdPrecio = document.createElement('td');
       tdPrecio.classList.add('tdPrecio');
-      tdPrecio.textContent = producto.precio;
+      tdPrecio.textContent = producto.precioFinal;
 
       let tdCantidad = document.createElement('td');
       tdCantidad.classList.add('tdCantidad');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let tdAgregar = document.createElement('td');
       let btnAgregar = document.createElement('button');
-      btnAgregar.textContent = '+++';
+      btnAgregar.textContent = 'agregar';
       btnAgregar.type = 'button';
       btnAgregar.addEventListener('click', function() {
           agregar(tr, true);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let tdQuitar = document.createElement('td');
       let btnQuitar = document.createElement('button');
-      btnQuitar.textContent = '---';
+      btnQuitar.textContent = 'quitar';
       btnQuitar.type = 'button';
       btnQuitar.addEventListener('click', function() {
           agregar(tr, false);
@@ -86,13 +86,13 @@ function incrementar(){
     for(cant of precioSubTotales){
       total+=parseFloat(cant.textContent);
     }
-    precioTotal.textContent=total;
+    precioTotal.textContent=total.toFixed(2);
   }
   function agregar(trProducto,sumar){
        let cantidad = parseInt(trProducto.querySelector('.tdCantidad').innerText);
        cantidad=sumar?cantidad +1 : cantidad -1;
        let precio= parseFloat(trProducto.querySelector('.tdPrecio').innerText);
-       let precioSubtotall=precio*cantidad;
+       let precioSubtotall=(precio*cantidad).toFixed(2);
        trProducto.querySelector('.tdCantidad').textContent=cantidad;
        trProducto.querySelector('.tdPrecioSubTotal').textContent=precioSubtotall;
        incrementar();
@@ -104,6 +104,7 @@ function incrementar(){
     let producto={};
     let cantidadTotalProductos=document.getElementById('tdCantidadTotal');
     let precioTotal=document.getElementById('tdPrecioTotal');
+    compra.numeroCompra="";
     compra.cantidadTotalProductos=parseInt(cantidadTotalProductos.innerText);
     compra.precioTotal=parseFloat(precioTotal.innerText);
     let trProducto=document.getElementsByClassName('trProducto');
@@ -139,6 +140,9 @@ function incrementar(){
             console.error('Error al acceder a la Compra:', response.status);
         }
     })
+    
+  
+  
     .catch(error => {
         console.error('Error de red:', error);
     });

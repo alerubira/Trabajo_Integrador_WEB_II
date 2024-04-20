@@ -111,5 +111,31 @@ app.get('/carrito', (req, res) => {
 app.listen(3000, () => {
     console.log('Servidor Express en funcionamiento en el puerto 3000');
 });*/
+/*function irAlCarrito(carrito) {
+    if (carrito.length !== 0) { 
+     fetch('http://localhost:3000/carrito', {
+     method: 'POST',
+     headers: {
+         'Content-Type': 'application/json'
+     },
+     body: JSON.stringify({ carrito: carrito })
+    })
+     .then(response => {
+         if (!response.ok) {
+         console.error('Error al acceder al carrito:', response.status);
+         }/* else {
+         // Redirigir al usuario a la página de carrito después de que se complete la solicitud
+           window.location.href = 'http://localhost:3000/carrito';
+       }
+       console.log(response);
+      })
+         .catch(error => {
+           console.error('Error de red:', error);
+       });
+      } else {
+              alert('Su carrito está vacío, no se puede procesar su compra');
+             }
+      }*/
+      //localstorage
 
                                    

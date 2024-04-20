@@ -34,6 +34,16 @@ function compras(compra){
          return;
      }
  }
+ // Determinar el número de compra a asignar
+ let numeroCompra = 1;
+ if (arrayJSON.length > 0) {
+     const ultimoCompra = arrayJSON[arrayJSON.length - 1];
+     numeroCompra = ultimoCompra.numeroCompra + 1;
+ }
+
+ // Asignar el número de compra al objeto 'compra'
+ compra.numeroCompra = numeroCompra;
+
 
  // Agregar el nuevo objeto JSON al array
  arrayJSON.push(compra);
