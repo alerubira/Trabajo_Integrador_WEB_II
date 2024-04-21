@@ -3,7 +3,7 @@
 const conectar=require('./conexxion.js');
 const axios = require('axios');
 const procesarProductos=require('./procesar.js');
-const activarPeticion=require('./peticionOfertas.js');
+const activarPeticion=require('./peticionJson.js');
 activarPeticion.activarPeticion();
  let listaP=[];    
 // Hacer una solicitud GET

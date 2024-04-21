@@ -208,5 +208,89 @@
         "precioST": "168"
       }
     ]
+  },
+  {
+    "numeroCompra": 10,
+    "cantidadTotalProductos": 4,
+    "precioTotal": 253.68,
+    "productosComprados": [
+      {
+        "cantidad": 2,
+        "codigo": "2",
+        "titulo": "Camisetas ajustadas premium informales para hombre",
+        "precio": "17.84",
+        "precioST": "35.68"
+      },
+      {
+        "cantidad": 2,
+        "codigo": "11",
+        "titulo": "Silicon Power 256GB SSD 3D NAND A55 SLC Caché Rendimiento Aumentar SATA III 2.5",
+        "precio": "109",
+        "precioST": "218.00"
+      }
+    ]
+  },
+  {
+    "numeroCompra": 11,
+    "cantidadTotalProductos": 4,
+    "precioTotal": 134.36,
+    "productosComprados": [
+      {
+        "cantidad": 2,
+        "codigo": "3",
+        "titulo": "Chaqueta de algodón para hombre",
+        "precio": "55.99",
+        "precioST": "111.98"
+      },
+      {
+        "cantidad": 2,
+        "codigo": "4",
+        "titulo": "Corte ajustado informal para hombre",
+        "precio": "11.19",
+        "precioST": "22.38"
+      }
+    ]
+  },
+  {
+    "numeroCompra": 12,
+    "cantidadTotalProductos": 6,
+    "precioTotal": 377.96,
+    "productosComprados": [
+      {
+        "cantidad": 2,
+        "codigo": "6",
+        "titulo": "Micropavé pequeño de oro macizo",
+        "precio": "168",
+        "precioST": "336.00"
+      },
+      {
+        "cantidad": 2,
+        "codigo": "7",
+        "titulo": "Princesa chapada en oro blanco",
+        "precio": "9.99",
+        "precioST": "19.98"
+      },
+      {
+        "cantidad": 2,
+        "codigo": "8",
+        "titulo": "Búho perforado de acero inoxidable chapado en oro rosa doble",
+        "precio": "10.99",
+        "precioST": "21.98"
+      }
+    ]
+  },
+  {
+    "numeroCompra": 13,
+    "cantidadTotalProductos": 5,
+    "precioTotal": 39.75,
+    "productosComprados": [
+      {
+        "cantidad": 5,
+        "codigo": "19",
+        "titulo": "Opna Humedad de manga corta para mujer",
+        "precio": "7.95",
+        "precioST": "39.75"
+      }
+    ]
   }
 ]

@@ -4,7 +4,7 @@ const path = require('path');
 const pug = require('pug');
 const app = express();
 //const fs = require('fs');
-const compras= require('./peticionOfertas');
+const compras= require('./peticionJson');
 // Middleware para procesar el cuerpo de la solicitud como JSON
 app.use(express.json());
 //app.set('view engine', 'pug');
